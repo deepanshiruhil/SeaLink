@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ⚓ SeaLink — Port Management System
 
 A full-stack database management system that simulates a real-world seaport management platform — tracking vessels, voyages, berths, containers, equipment, customs officers, shipping agents, and invoices, all backed by a live MySQL database with triggers and ACID transactions.
@@ -183,16 +182,12 @@ The SQL file includes 15+ production-quality queries covering:
 
 ---
 
-## 👤 Author
+## Author
 
-Built by Deepanshi Ruhil — DBMS course project
+Built by Deepanshi Ruhil
 
 ---
 
-## 📄 License
-
-This project is for educational purposes.
 =======
 # SeaLink
 A full-stack DBMS-powered port management system built using Python, Streamlit, and MySQL, designed to simulate real-world seaport operations including vessel scheduling, container tracking, equipment monitoring, and billing.
->>>>>>> 58cb7030af9cc44e6ca70df6aa629db0448c1cae
