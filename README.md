@@ -1,4 +1,4 @@
-# ⚓ harborcore — Port Management System
+# ⚓ Harborcore — Port Management System
 
 A full-stack database management system that simulates a real-world seaport management platform — tracking vessels, voyages, berths, containers, equipment, customs officers, shipping agents, and invoices, all backed by a live MySQL database with triggers and ACID transactions.
 
