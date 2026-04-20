@@ -1,4 +1,4 @@
-# ⚓ SeaLink — Port Management System
+# ⚓ harborcore — Port Management System
 
 A full-stack database management system that simulates a real-world seaport management platform — tracking vessels, voyages, berths, containers, equipment, customs officers, shipping agents, and invoices, all backed by a live MySQL database with triggers and ACID transactions.
 
@@ -98,8 +98,8 @@ Five transaction scenarios are demonstrated live in the UI, each showing real be
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/sealink.git
-cd sealink
+git clone https://github.com/your-username/harborcore.git
+cd harborcore
 ```
 
 ### 2. Install Python dependencies
@@ -110,16 +110,16 @@ pip install -r requirements.txt
 ### 3. Set up the database
 Open MySQL Workbench or your MySQL shell and run the full setup file:
 ```sql
-source sql/sealink_schema_and_seed.sql
+source sql/harborcore_schema_and_seed.sql
 ```
-This creates the `sealink` database, all tables, indexes, seed data, the `available_berths` view, and all triggers.
+This creates the `harborcore` database, all tables, indexes, seed data, the `available_berths` view, and all triggers.
 
 ### 4. Configure your DB credentials
-The app currently reads credentials directly from `sealink_app.py`. Open the file and update the connection block near the top:
+The app currently reads credentials directly from `harborcore_app.py`. Open the file and update the connection block near the top:
 ```python
 conn = mysql.connector.connect(
     host='127.0.0.1',
-    database='sealink',
+    database='harborcore',
     user='root',
     password='YOUR_PASSWORD_HERE',  # ← change this
     ...
@@ -138,13 +138,13 @@ The app will open at `http://localhost:8501`.
 ## 📁 Project Structure
 
 ```
-sealink/
+harborcore/
 ├── app.py                        # Main Streamlit application (all pages)
 ├── requirements.txt              # Python dependencies
 ├── .gitignore
 ├── README.md
 └── sql/
-    └── sealink_schema_and_seed.sql   # Full DB setup: schema + data + triggers
+    └── harborcore_schema_and_seed.sql   # Full DB setup: schema + data + triggers
 ```
 
 ---
@@ -189,5 +189,5 @@ Built by Deepanshi Ruhil
 ---
 
 =======
-# SeaLink
+# harborcore
 A full-stack DBMS-powered port management system built using Python, Streamlit, and MySQL, designed to simulate real-world seaport operations including vessel scheduling, container tracking, equipment monitoring, and billing.
