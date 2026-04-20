@@ -4,7 +4,7 @@ from mysql.connector import Error
 import pandas as pd
 from datetime import date
 
-st.set_page_config(page_title="SeaLink — Port Management", page_icon="⚓", layout="wide")
+st.set_page_config(page_title="harborcore — Port Management", page_icon="⚓", layout="wide")
 
 st.markdown("""
 <style>
@@ -69,7 +69,7 @@ div[data-testid="metric-container"] {
 def get_connection():
     try:
         return mysql.connector.connect(
-            host='127.0.0.1', database='sealink',
+            host='127.0.0.1', database='harborcore',
             user='root', password='eshaan1306', autocommit=False
         )
     except Error:
@@ -86,7 +86,7 @@ def get_conn():
 def run_query(sql, params=None):
     try:
         conn = mysql.connector.connect(
-            host='127.0.0.1', database='sealink',
+            host='127.0.0.1', database='harborcore',
             user='root', password='eshaan1306', autocommit=True
         )
         cur = conn.cursor(dictionary=True)
@@ -102,7 +102,7 @@ def run_query(sql, params=None):
 def run_write(sql, params=None):
     try:
         conn = mysql.connector.connect(
-            host='127.0.0.1', database='sealink',
+            host='127.0.0.1', database='harborcore',
             user='root', password='eshaan1306', autocommit=False
         )
         cur = conn.cursor()
@@ -122,7 +122,7 @@ def run_write(sql, params=None):
 def run_transaction(statements):
     try:
         conn = mysql.connector.connect(
-            host='127.0.0.1', database='sealink',
+            host='127.0.0.1', database='harborcore',
             user='root', password='eshaan1306', autocommit=False
         )
         cur = conn.cursor()
@@ -154,7 +154,7 @@ def get_options(sql):
 
 
 # ── SIDEBAR ─────────────────────────────────────────────────
-st.sidebar.markdown("## ⚓ SeaLink")
+st.sidebar.markdown("## ⚓ harborcore")
 st.sidebar.markdown("**Port Management · Tasks 5 & 6**")
 st.sidebar.markdown("---")
 
@@ -182,14 +182,14 @@ st.sidebar.markdown("""
 `before_voyage_insert`  
 `after_voyage_insert`
 """)
-st.sidebar.caption("SeaLink · DBMS Tasks 5 & 6")
+st.sidebar.caption("harborcore · DBMS Tasks 5 & 6")
 
 
 # ══════════════════════════════════════════════════════════════
 #  DASHBOARD
 # ══════════════════════════════════════════════════════════════
 if page == "🏠 Dashboard":
-    st.markdown("# ⚓ SEALINK PORT MANAGEMENT")
+    st.markdown("# ⚓ harborcore PORT MANAGEMENT")
     st.markdown("---")
 
     c1, c2, c3, c4, c5 = st.columns(5)
@@ -959,7 +959,7 @@ Both the voyage record and the berth status update happen inside one transaction
         if go and sel_inv5:
             import mysql.connector as _mc
 
-            DB = dict(host='127.0.0.1', database='sealink', user='root', password='eshaan1306')
+            DB = dict(host='127.0.0.1', database='harborcore', user='root', password='eshaan1306')
             original = float(run_query(f"SELECT amount FROM invoice WHERE invoice_id='{sel_inv5}'").iloc[0]['amount'])
 
             # ── PART 1: LOST UPDATE (no locking) ──────────────────
