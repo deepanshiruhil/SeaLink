@@ -5,7 +5,6 @@ import pandas as pd
 from datetime import date
 
 st.set_page_config(page_title="harborcore — Port Management", page_icon="⚓", layout="wide")
-
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;600&display=swap');
